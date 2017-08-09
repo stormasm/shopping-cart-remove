@@ -1,3 +1,5 @@
-### tabular-favorites
+### tabular-cart
 
-* **tabularedux** repo clone with additional favorites functionality
+* **shopping-cart** in a
+
+https://github.com/reactabular/reactabular way.
