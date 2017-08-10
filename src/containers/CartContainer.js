@@ -11,7 +11,7 @@ import CartList from "../components/CartList";
 
 const CartContainer = ({ products, total, checkout }) =>
   <div>
-    <CartList title="Products">
+    <CartList title="Your Cart">
       {products.map(product =>
         <CartItem
           key={product.id}
