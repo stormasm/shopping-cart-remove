@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Product from './Product'
+import CartProduct from './CartProduct'
 
-const ProductItem = ({ product, onAddToCartClicked }) => (
+const CartItem = ({ product, onAddToCartClicked }) => (
   <div style={{ marginBottom: 20 }}>
-    <Product
+    <CartProduct
       title={product.title}
       price={product.price}
       inventory={product.inventory} />
@@ -16,7 +16,7 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
   </div>
 )
 
-ProductItem.propTypes = {
+CartItem.propTypes = {
   product: PropTypes.shape({
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
@@ -25,4 +25,4 @@ ProductItem.propTypes = {
   onAddToCartClicked: PropTypes.func.isRequired
 }
 
-export default ProductItem
+export default CartItem

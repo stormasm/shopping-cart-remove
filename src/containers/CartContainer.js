@@ -5,20 +5,20 @@ import { checkout } from "../actions";
 import { getTotal, getCartProducts } from "../reducers";
 import Cart from "../components/Cart";
 
-import ProductItem from "../components/ProductItem";
-import ProductsList from "../components/ProductsList";
+import CartItem from "../components/CartItem";
+import CartList from "../components/CartList";
 
 const CartContainer = ({ products, total, checkout }) =>
   <div>
-    <ProductsList title="Products">
+    <CartList title="Products">
       {products.map(product =>
-        <ProductItem
+        <CartItem
           key={product.id}
           product={product}
           onAddToCartClicked={() => addToCart(product.id)}
         />
       )}
-    </ProductsList>
+    </CartList>
     <Cart
       products={products}
       total={total}
