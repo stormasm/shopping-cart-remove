@@ -5,11 +5,25 @@ import { checkout } from '../actions'
 import { getTotal, getCartProducts } from '../reducers'
 import Cart from '../components/Cart'
 
+import ProductItem from '../components/ProductItem'
+import ProductsList from '../components/ProductsList'
+
 const CartContainer = ({ products, total, checkout }) => (
+
+    <div>
+    <ProductsList title="Products">
+      {products.map(product =>
+        <ProductItem
+          key={product.id}
+          product={product}
+          onAddToCartClicked={() => addToCart(product.id)} />
+      )}
+    </ProductsList>
   <Cart
     products={products}
     total={total}
     onCheckoutClicked={() => checkout(products)} />
+    </div>
 )
 
 CartContainer.propTypes = {
