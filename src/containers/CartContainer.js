@@ -16,7 +16,7 @@ const CartContainer = ({ products, total, checkout }) =>
         <CartItem
           key={product.id}
           product={product}
-          onAddToCartClicked={() => addToCart(product.id)}
+          onRemoveFromCartClicked={() => addToCart(product.id)}
         />
       )}
     </CartList>

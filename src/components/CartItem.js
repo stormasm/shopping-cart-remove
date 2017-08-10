@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import CartProduct from './CartProduct'
 
-const CartItem = ({ product, onAddToCartClicked }) => (
+const CartItem = ({ product, onRemoveFromCartClicked }) => (
   <div style={{ marginBottom: 20 }}>
     <CartProduct
       title={product.title}
       price={product.price}
       inventory={product.inventory} />
     <button
-      onClick={onAddToCartClicked}
+      onClick={onRemoveFromCartClicked}
       disabled={product.inventory > 0 ? '' : 'disabled'}>
       {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
     </button>
@@ -22,7 +22,7 @@ CartItem.propTypes = {
     price: PropTypes.number.isRequired,
     inventory: PropTypes.number.isRequired
   }).isRequired,
-  onAddToCartClicked: PropTypes.func.isRequired
+  onRemoveFromCartClicked: PropTypes.func.isRequired
 }
 
 export default CartItem
