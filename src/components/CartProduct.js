@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const CartProduct = ({ price, quantity, title }) => (
   <div>
-    ({quantity}) {title} - &#36;{price}{quantity ? ` x ${quantity}` : null}
+    <b>{quantity}</b> {title} - &#36;{price}{quantity ? ` x ${quantity}` : null}
   </div>
 )
 
