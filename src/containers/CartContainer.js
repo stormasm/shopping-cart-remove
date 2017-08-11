@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { addToCart } from '../actions'
+import { removeFromCart } from '../actions'
 import { checkout } from "../actions";
 import { getTotal, getCartProducts } from "../reducers";
 import Cart from "../components/Cart";
@@ -9,14 +9,14 @@ import Cart from "../components/Cart";
 import CartItem from "../components/CartItem";
 import CartList from "../components/CartList";
 
-const CartContainer = ({ products, total, checkout }) =>
+const CartContainer = ({ products, total, removeFromCart, checkout }) =>
   <div>
     <CartList title="Your Cart">
       {products.map(product =>
         <CartItem
           key={product.id}
           product={product}
-          onRemoveFromCartClicked={() => addToCart(product.id)}
+          onRemoveFromCartClicked={() => removeFromCart(product.id)}
         />
       )}
     </CartList>
@@ -37,6 +37,7 @@ CartContainer.propTypes = {
     })
   ).isRequired,
   total: PropTypes.string,
+  removeFromCart: PropTypes.func.isRequired,
   checkout: PropTypes.func.isRequired
 };
 
@@ -45,4 +46,4 @@ const mapStateToProps = state => ({
   total: getTotal(state)
 });
 
-export default connect(mapStateToProps, { checkout })(CartContainer);
+export default connect(mapStateToProps, { removeFromCart, checkout })(CartContainer);
