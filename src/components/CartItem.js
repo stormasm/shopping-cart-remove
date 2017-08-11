@@ -7,7 +7,7 @@ const CartItem = ({ product, onRemoveFromCartClicked }) => (
     <CartProduct
       title={product.title}
       price={product.price}
-      inventory={product.inventory} />
+      quantity={product.quantity} />
     <button
       onClick={onRemoveFromCartClicked}
       disabled={product.inventory > 0 ? '' : 'disabled'}>
@@ -20,7 +20,7 @@ CartItem.propTypes = {
   product: PropTypes.shape({
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
-    inventory: PropTypes.number.isRequired
+    quantity: PropTypes.number.isRequired
   }).isRequired,
   onRemoveFromCartClicked: PropTypes.func.isRequired
 }
