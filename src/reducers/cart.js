@@ -21,7 +21,15 @@ const addedIds = (state = initialState.addedIds, action) => {
     case REMOVE_FROM_CART:
       let index = state.indexOf(action.productId);
       if (index > -1) {
-        return state.splice(index,1);
+        console.log("SPLICE should fire");
+
+        let x1 = state;
+        let x2 = state.splice(index);
+        console.log('x1 = ', x1)
+        console.log('x2 = ', x2)
+
+        return x1;
+        //return state.splice(index,1)
       }
       return state
 
