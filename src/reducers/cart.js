@@ -44,7 +44,7 @@ const quantityById = (state = initialState.quantityById, action) => {
 
     case REMOVE_FROM_CART:
       return { ...state,
-        [productId]: (state[productId] || 0) - 1
+        [productId]: (state[productId] || 0) - action.quantityById
     }
 
     default:
