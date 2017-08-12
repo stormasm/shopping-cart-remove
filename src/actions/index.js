@@ -17,9 +17,10 @@ const addToCartUnsafe = productId => ({
   productId
 })
 
-const removeFromCartUnsafe = productId => ({
+const removeFromCartUnsafe = (productId,quantityById) => ({
   type: types.REMOVE_FROM_CART,
-  productId
+  productId,
+  quantityById
 })
 
 export const addToCart = productId => (dispatch, getState) => {
@@ -29,8 +30,9 @@ export const addToCart = productId => (dispatch, getState) => {
 }
 
 export const removeFromCart = productId => (dispatch, getState) => {
+  const quantityById = getState().cart.quantityById[productId]
   if (getState().products.byId[productId].inventory > 0) {
-    dispatch(removeFromCartUnsafe(productId))
+    dispatch(removeFromCartUnsafe(productId,quantityById))
   }
 }
 

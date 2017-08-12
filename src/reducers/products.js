@@ -12,7 +12,7 @@ const products = (state, action) => {
     case REMOVE_FROM_CART:
       return {
         ...state,
-        inventory: state.inventory + 1
+        inventory: state.inventory + action.quantityById
       }
 
     default:
