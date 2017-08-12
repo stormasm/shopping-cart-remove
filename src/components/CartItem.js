@@ -9,9 +9,8 @@ const CartItem = ({ product, onRemoveFromCartClicked }) => (
       price={product.price}
       quantity={product.quantity} />
     <button
-      onClick={onRemoveFromCartClicked}
-      disabled={product.inventory > 0 ? '' : 'disabled'}>
-      {product.inventory > 0 ? 'Remove from cart' : 'Sold Out'}
+      onClick={onRemoveFromCartClicked}>
+      Remove from cart
     </button>
   </div>
 )
